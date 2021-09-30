@@ -11,11 +11,13 @@
         <h1>HTML Week 4 - Images, Links, Forms, and Tables</h1>
         <nav>
           <a href="about.html"> About</a>
+          <!-- names anchors use the # to target an id attribute on another tag -->
+          <a href="#cats">Cats</a>
         </nav>
     </header>
     <main>
       <!-- the src, or source, is and attribute that tells the image tag which image it should display-->
-      <img src="images/kitten.jpg" alt="Kitten sleeping on a blanket" width="300" title="Cute kitten"/>
+      <img src="images/kitten.jpg" alt="Kitten sleeping on a blanket" width="1000" title="Cute kitten"/>
 
       <article>
         <!-- the tag, or anchor tag, creates a link to take a user somewhere else-->
@@ -23,9 +25,74 @@
         <!-- the test in between the  opening and closing a tag is what the user clicks on-->
         <!-- _blank in the traget attibute opens the link in a new tab-->
         <a href="https://google.com" target="_blank"> Google</a>
-
-
       </article>
+
+      <article id="cats">
+        <p> Things my cat does to keep me up at night</p>
+        <ul>
+          <li>Scraches at the door</li>
+          <li>Attacks my feet</li>
+          <li>Chases the other cats</li>
+        </ul>
+      </article>
+<!-- the form tag defines the area of the form - when you submit, you submit all the information inside that form-->
+<!-- "Get" is unencrypted "Post" is encrypted-->
+      <form action="index.html" method="get">
+        <!-- the label and the input are linked - the for= attribute in the label tag must match the id of the input tag-->
+        <!-- all form fields must have a typw attribute (that defines what they are) and a name attribute (that allows the place you send the info to access each field)-->
+        <p>
+          <!-- if you add "required" after placeholder then it becomes a required field-->
+          <label for="username">Name</label>
+          <input id="username" type="text" name="username" placeholder="John Doe" required>
+        </p>
+        <p> 
+          <!-- the password input hides the text the user types-->
+          <label for="pass">Password</label>
+          <input id="pass" type="password">
+        </p>
+        <p>
+          <!-- some inputs more than just text, like a colour picker-->
+          <label for="colour">Pick a colour</label>
+          <input id="colour" type="color">
+        </p>
+        <p> 
+          <!-- the value attribute sets a default starting value for the form field-->
+          <label for="number">Number</label>
+          <input id="number" type="range" name="number" value="4">
+        </p>
+        <p> 
+          <!-- text area is for multiple lines of text-->
+          <label for="info">Enter information</label>
+          <textarea id="info" name="info"></textarea>
+        </p>
+        <p> 
+          <label for="fruit"> Pick a fruit:</label>
+          <select id="fruit" name="fruit">
+            <option value="default"> </option>
+            <option value="banana"> Banana</option>
+            <option value="apple"> Apple</option>
+            <option value="orange"> Orange</option>
+          </select>
+        </p>
+        <p> 
+          <!-- when adding a check box, if "checked" is added it will automatically be checked-->
+          <label for="spam">Spam me</label>
+          <input type="checkbox" id="spam" name="spam" checked>
+        </p>
+        <p> 
+          <!-- radio buttons always come in pairs. <span> is the question or text for the radio button-->
+            <!-- add a "value" so the site knows what to do with a selection-->
+          <span> Do you like dogs?:</span>
+          <label for="yes">Yes!</label>
+          <input type="radio" id="yes" name="dogs" value="yes">
+          <label for="no"> No!</label>
+          <input type=radio id="no" name="dogs" value="no">
+        </p>
+        <!-- button will submit the form-->
+        <p> 
+          <button type="submit">Submit</button>
+        </p>
+      </form>
     </main>
     <footer>
         <article>&copy; Somebody, Somewhere, 2021</article>
